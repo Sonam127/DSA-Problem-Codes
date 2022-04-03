@@ -1,1 +1,65 @@
+#include<iostream>
+using namespace std;
 
+void union_op(int a[],int b[],int n,int m)
+{
+	int i,j=0;
+	while(i<n && j<m)
+	{
+		if(a[i] < b[j])
+		{
+			cout<<a[i++]<<" ";
+		}
+		else if(a[i] > b[j])
+		{
+			cout<<b[j++]<<" ";
+		}
+		else{
+			cout<<a[i++]<<" ";
+			j++;
+		}
+	}
+	while(i<n)
+	{
+		cout<<a[i++]<<" ";
+	}
+	while(j<m)
+	{
+		cout<<b[j++]<<" ";
+	}
+	
+}
+
+void intersection(int a[],int b[],int n,int m)
+{
+	int i,j=0;
+	while(i<n && j<m)
+	{
+		if(a[i] < b[j])
+		{
+			i++;
+		}
+		else if(a[i] > b[j])
+		{
+			j++;
+		}
+		else{
+			cout<<a[i++]<<" ";
+			j++;
+		}
+	}
+	
+}
+
+
+int main()
+{
+	int a[]={4,3,6,1,0,8};
+	int b[]={4,5,7,2};
+	int n=sizeof(a)/sizeof(int);
+	int m=sizeof(b)/sizeof(int);
+	cout<<"Union is  \n";
+	union_op(a,b,n,m);
+	cout<<"\nIntersection is  \n";
+	intersection(a,b,n,m);
+  }
