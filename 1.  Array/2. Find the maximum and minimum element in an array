@@ -1,1 +1,26 @@
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+    int a[]={3,6,1,0,7,6};
+    int max,min;
+    max=a[0];
+    min=a[0];
+    int n=sizeof(a)/sizeof(int);
+    for(int i=0;i<n;i++)
+    {
+        if(a[i]>max)
+        {
+            max=a[i];
+        }
+        if(a[i]<min)
+        {
+            min=a[0];
+        }
+    }
+    cout<<" maximum "<<max<<"\n minimum "<<min;
+
+    return 0;
+}
